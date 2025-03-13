@@ -76,12 +76,18 @@ datePickerElement.addEventListener("change", () => {
   halfBirthdayLabel.classList.remove("hidden");
 
   const daysFromNowBirthday = getNumberOfDaysFromNow(birthdayDate);
-  if (daysFromNowBirthday < 0) {
-    daysFromNowBirthdayElement.innerText = `${-daysFromNowBirthday}`;
-    daysFromNowBirthdayFlavorElement.innerText = " days ago";
-  } else if (daysFromNowBirthday === 0) {
+  if (daysFromNowBirthday === 0) {
     daysFromNowBirthdayElement.innerText = `Today! 🎉`;
     daysFromNowBirthdayFlavorElement.innerText = "";
+  } else if (daysFromNowBirthday === -1) {
+    daysFromNowBirthdayElement.innerText = `${-daysFromNowBirthday}`;
+    daysFromNowBirthdayFlavorElement.innerText = " day ago";
+  } else if (daysFromNowBirthday === 1) {
+    daysFromNowBirthdayElement.innerText = `${daysFromNowBirthday}`;
+    daysFromNowBirthdayFlavorElement.innerText = " day from now";
+  } else if (daysFromNowBirthday < 0) {
+    daysFromNowBirthdayElement.innerText = `${-daysFromNowBirthday}`;
+    daysFromNowBirthdayFlavorElement.innerText = " days ago";
   } else {
     daysFromNowBirthdayElement.innerText = `${daysFromNowBirthday}`;
     daysFromNowBirthdayFlavorElement.innerText = " days from now";
@@ -99,4 +105,7 @@ datePickerElement.addEventListener("change", () => {
 
   dateElement.innerText = halfBirthdayString;
   daysFromNowElement.innerText = `${daysFromNow} days from now`;
+  if (daysFromNow === 1) {
+    daysFromNowElement.innerText = `${daysFromNow} day from now`;
+  }
 });
