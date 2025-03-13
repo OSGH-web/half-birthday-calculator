@@ -1,0 +1,85 @@
+:root {
+    --n-rows: 4;
+    --n-cols: 2;
+
+
+    --scale-factor: 24;
+
+    --row-height: calc(4px * var(--scale-factor));
+    --row-gap: calc(2px * var(--scale-factor));
+
+    --col-width: calc(16px * var(--scale-factor));
+    --col-gap: calc(1.5px * var(--scale-factor));
+
+
+    --page-height: calc((var(--n-rows) * var(--row-height)) + ((var(--n-rows) - 1) * var(--row-gap)));
+    --page-width: calc((var(--n-cols) * var(--col-width)) + ((var(--n-cols) - 1) * var(--col-gap)));
+}
+
+body {
+    margin: 0;
+    /* background-color: black; */
+}
+
+.background-color-red {
+    background-color: red;
+}
+.background-color-black {
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    width: 75%;
+}
+
+.page {
+    background-color: white;
+    height: var(--page-height);
+    width: var(--page-width);
+
+    margin-left: calc(2 * var(--col-gap));
+}
+
+.row-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    width: var(--col-width);
+    /* background-color: yellow; */
+    margin-left: var(--col-gap);
+}
+
+/* can apply to a row or a col. removes the margin */
+.start {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.indent {
+    margin-left: calc(1/6 * var(--col-gap));
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.page-width {
+    width: var(--page-width);
+}
+
+.row {
+    height: var(--row-height);
+    /* background-color: red; */
+}
+
+.gap {
+    height: var(--row-gap);
+}
+
+
