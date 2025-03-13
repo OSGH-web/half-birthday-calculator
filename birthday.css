@@ -32,10 +32,6 @@ body {
     display: none;
 }
 
-input {
-    width: 75%;
-}
-
 .page {
     background-color: white;
     height: var(--page-height);
