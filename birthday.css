@@ -1,5 +1,5 @@
 :root {
-    --n-rows: 5;
+    --n-rows: 7;
     --n-cols: 2;
 
 
@@ -78,4 +78,12 @@ body {
     height: var(--row-gap);
 }
 
+.mobile-only {
+    display: none;
+}
 
+@media screen and (max-width: 1000px) {
+    .mobile-only {
+        display: inherit;
+    }
+}
