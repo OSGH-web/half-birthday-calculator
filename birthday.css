@@ -1,14 +1,14 @@
 :root {
-    --n-rows: 4;
+    --n-rows: 5;
     --n-cols: 2;
 
 
-    --scale-factor: 24;
+    --scale-factor: 30;
 
     --row-height: calc(4px * var(--scale-factor));
     --row-gap: calc(2px * var(--scale-factor));
 
-    --col-width: calc(16px * var(--scale-factor));
+    --col-width: calc(14px * var(--scale-factor));
     --col-gap: calc(1.5px * var(--scale-factor));
 
 
@@ -37,7 +37,7 @@ body {
     height: var(--page-height);
     width: var(--page-width);
 
-    margin-left: calc(2 * var(--col-gap));
+    margin-left: calc(1 * var(--col-gap));
 }
 
 .row-group {

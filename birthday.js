@@ -54,6 +54,8 @@ document.getElementById("date").setAttribute("max", year + "-12-31");
 
 const datePickerElement = document.getElementById("date-picker");
 const dateElement = document.getElementById("date");
+const birthdayDateElement = document.getElementById("birthday-date");
+const birthdayRowGroupElement = document.getElementById("birthday-row-group");
 const daysFromNowElement = document.getElementById("days-from-now");
 const daysFromNowBirthdayElement = document.getElementById(
   "days-from-now-birthday",
@@ -70,6 +72,8 @@ datePickerElement.addEventListener("change", () => {
 
   datePickerElement.classList.remove("hidden");
   dateElement.classList.remove("hidden");
+  birthdayDateElement.classList.remove("hidden");
+  birthdayRowGroupElement.classList.remove("row-group");
   daysFromNowElement.classList.remove("hidden");
   daysFromNowBirthdayElement.classList.remove("hidden");
   daysFromNowBirthdayFlavorElement.classList.remove("hidden");
@@ -93,16 +97,16 @@ datePickerElement.addEventListener("change", () => {
     daysFromNowBirthdayFlavorElement.innerText = " days from now";
   }
 
+  const birthdayString = getDateString(birthdayDate);
+  birthdayDateElement.innerText = birthdayString;
+
   const halfBirthday = getHalfBirthday(birthdayDate);
-
   let halfBirthdayString = getDateString(halfBirthday);
-
   let daysFromNow = getNumberOfDaysFromNow(halfBirthday);
   if (daysFromNow >= 365) {
     daysFromNow -= 365;
     halfBirthdayString = getDateString(addDays(halfBirthday, -365));
   }
-
   dateElement.innerText = halfBirthdayString;
   daysFromNowElement.innerText = `${daysFromNow} days from now`;
   if (daysFromNow === 1) {
